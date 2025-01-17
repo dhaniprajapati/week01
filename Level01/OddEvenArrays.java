@@ -1,0 +1,58 @@
+//importing scanner class from util package
+import java.util.Scanner;
+
+public class OddEvenArrays 
+{
+    public static void main(String[] args) 
+	{
+        Scanner scanner = new Scanner(System.in);
+		//taking user input
+        System.out.print("Enter a natural number: ");
+        int number = scanner.nextInt();
+
+        //check if the number is a natural number or not
+        if (number < 1) 
+		{
+            System.out.println("Please enter a natural number greater than 0.");
+			 //to exit the program
+            return;
+        }
+        //create arrays for odd and even numbers
+        int[] oddNumbers = new int[number / 2 + 1];
+        int[] evenNumbers = new int[number / 2 + 1];
+		//create variable to store values in index and initialize it to 0
+        int oddIndex = 0, evenIndex = 0;
+
+        //for oop from 1 to the entered number
+        for (int i = 1; i <= number; i++) 
+		{
+			//check if the number is even or odd 
+            if (i % 2 == 0) 
+			{
+				//store the value if even to evenindex
+                evenNumbers[evenIndex++] = i;
+            } 
+			else 
+			{
+				//store the value if odd to odd index 
+                oddNumbers[oddIndex++] = i;
+            }
+        }
+
+        //Print odd numbers
+        System.out.print("Odd Numbers: ");
+        for (int i = 0; i < oddIndex; i++) 
+		{
+            System.out.print(oddNumbers[i] + " ");
+        }
+        System.out.println();
+
+        //Print even numbers
+        System.out.print("Even Numbers: ");
+        for (int i = 0; i < evenIndex; i++) 
+		{
+            System.out.print(evenNumbers[i] + " ");
+        }
+        System.out.println();
+    }
+}
